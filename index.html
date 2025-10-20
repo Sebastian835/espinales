@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Espinales General House Cleaning & Maintenance Corp</title>
+    <link rel="icon" href="./img/logo.ico">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Animate.css & AOS for scroll animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        #carouselGallery {
+            max-width: 100%;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 12px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #carouselGallery .carousel-item img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+            background-color: #f8f9fa;
+        }
+
+        :root {
+            --bg: #f6fbff;
+            --card: #ffffff;
+            --primary: #0b74ff;
+            /* azul vivo */
+            --secondary: #12b886;
+            /* verde */
+            --accent: #ffd166;
+            /* dorado suave */
+            --muted: #6b7280;
+            --dark: #0f1724;
+            --glass: rgba(255, 255, 255, 0.75);
+        }
+
+        body {
+            font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, #f6fbff 0%, #eef7ff 100%);
+            color: var(--dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, rgba(11, 116, 255, 0.95), rgba(18, 184, 134, 0.95));
+            box-shadow: 0 6px 20px rgba(11, 116, 255, 0.08);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #fff !important;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.92) !important;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 68vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(3, 37, 65, 0.14), rgba(255, 255, 255, 0.05));
+            pointer-events: none;
+        }
+
+        .hero-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.72));
+            border-radius: 14px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(8, 22, 48, 0.06);
+            border: 1px solid rgba(11, 116, 255, 0.06);
+            backdrop-filter: blur(6px);
+        }
+
+        .badge-accent {
+            background: var(--accent);
+            color: #07203b;
+            font-weight: 600;
+            border-radius: 999px;
+            padding: .5rem .9rem;
+        }
+
+        /* services */
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(11, 116, 255, 0.08);
+        }
+
+        .service-card {
+            border-radius: 12px;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(11, 116, 255, 0.08);
+        }
+
+        /* pricing */
+        .price-card {
+            border-radius: 12px;
+            transition: transform .22s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(2, 6, 23, 0.06);
+        }
+
+        /* testimonials */
+        .testimonial {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.04);
+            border-left: 4px solid var(--primary);
+        }
+
+        footer {
+            background: #071428;
+            color: rgba(255, 255, 255, 0.85);
+            padding: 2.2rem 0;
+        }
+
+        /* responsive maps */
+        .map-responsive {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%;
+        }
+
+        .map-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .logo-espinales {
+            height: 68px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .logo-espinales {
+                height: 38px;
+            }
+        }
+
+        /* Utilities */
+        .muted {
+            color: var(--muted);
+        }
+
+        .accent-txt {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        @media (max-width:768px) {
+            .hero {
+                padding: 3.5rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./img/logo.png" alt="Logo Espinales" class="logo-espinales me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Quiénes somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <div class="hero-card" data-aos="fade-right">
+                        <span class="badge-accent mb-3 d-inline-block">Servicios en NYC & Long Island</span>
+                        <h1 class="display-5 mb-3">Tu solución de limpieza profesional<br><span
+                                class="accent-txt">Espinales General</span></h1>
+                        <p class="lead muted">Más de 5 años ofreciendo limpieza residencial, comercial y mantenimiento
+                            con productos eco-friendly y equipos profesionales.</p>
+
+                        <div class="d-flex gap-2 mt-4">
+                            <a href="#contact" class="btn btn-outline-secondary btn-lg">Pedir presupuesto</a>
+                        </div>
+
+                        <div class="mt-4 d-flex gap-3 align-items-center">
+                            <div>
+                                <strong>Tel:</strong> 516-430-0025<br>
+                                <small class="muted">info@espinalesgeneralhousecleaning.com</small>
+                            </div>
+                            <div class="vr"></div>
+                            <div>
+                                <small class="muted">Area:</small><br>
+                                <strong>Freeport, NY · NYC · Long Island</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <!-- REEMPLAZAR: imagen hero por la que prefieras -->
+                    <div class="position-relative overflow-hidden rounded" style="border-radius:16px;">
+                        <img src="./img/hero.png" alt="limpieza profesional" class="img-fluid w-100"
+                            style="max-height:520px; object-fit:cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6" data-aos="fade-up">
+                    <h2>Quiénes somos</h2>
+                    <p class="muted">En <strong>Espinales General House Cleaning & Maintenance Corp</strong> nos
+                        dedicamos a ofrecer servicios de limpieza y mantenimiento con profesionalismo, seguridad y
+                        excelencia. Atendemos hogares, comercios y edificios con programas de limpieza regular o
+                        limpiezas profundas por demanda.</p>
+
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="p-3 rounded"
+                                style="background:linear-gradient(90deg, rgba(11,116,255,0.06), rgba(18,184,134,0.04));">
+                                <h5 class="mb-1">Misión</h5>
+                                <p class="small muted mb-0">Brindar soluciones confiables y sostenibles que mejoren la
+                                    calidad de vida de nuestros clientes.</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3 rounded"
+                                style="background:linear-gradient(90deg, rgba(255,209,102,0.06), rgba(11,116,255,0.02));">
+                                <h5 class="mb-1">Visión</h5>
+                                <p class="small muted mb-0">Ser líderes en limpieza residencial y comercial en NY,
+                                    reconocidos por calidad y servicio.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="list-unstyled mt-4">
+                        <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Productos eco-friendly
+                            disponibles</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Equipo profesional y seguro
+                        </li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-success me-2"></i> Atención personalizada y
+                            presupuestos claros</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6" data-aos="zoom-in">
+                    <!-- REEMPLAZAR: imagen about -->
+                    <img src="./img/contact.png" alt="about" class="img-fluid rounded shadow-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-5"
+        style="background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(245,253,255,0.95));">
+        <div class="container">
+            <div class="row align-items-center mb-4">
+                <div class="col-md-8">
+                    <h3>Nuestros servicios</h3>
+                    <p class="muted">Ofrecemos una amplia gama de servicios adaptados a hogares y empresas: desde
+                        limpiezas regulares hasta desinfección profesional y mantenimiento.</p>
+                </div>
+
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+                    <div class="p-4 service-card card h-100 border-0">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="service-icon"
+                                style="background: linear-gradient(180deg,var(--primary),#2aa2ff);">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div>
+                                <h5>Comercial & Janitorial</h5>
+                                <p class="muted small mb-0">Oficinas, locales y post-construcción. Limpiezas programadas
+                                    y completas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="120">
+                    <div class="p-4 service-card card h-100 border-0">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="service-icon"
+                                style="background: linear-gradient(180deg,var(--secondary),#2fe3a6);">
+                                <i class="fa-solid fa-broom"></i>
+                            </div>
+                            <div>
+                                <h5>Limpieza profunda</h5>
+                                <p class="muted small mb-0">Stains difíciles, alfombras, tapicerías y limpieza por áreas
+                                    con gran suciedad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="190">
+                    <div class="p-4 service-card card h-100 border-0">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="service-icon" style="background: linear-gradient(180deg,#ffd166,#ffb84d);">
+                                <i class="fa-solid fa-virus-covid"></i>
+                            </div>
+                            <div>
+                                <h5>Desinfección & Mantenimiento</h5>
+                                <p class="muted small mb-0">Desinfección ecológica, mantenimiento programado y servicios
+                                    puntuales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- more services row -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="260">
+                    <div class="p-4 service-card card h-100 border-0">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="service-icon" style="background: linear-gradient(180deg,#8b5cf6,#6d28d9);">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <div>
+                                <h5>Especializados</h5>
+                                <p class="muted small mb-0">Limpieza de muros, extracción de grasa, pulido de pisos y
+                                    más (evaluación in situ).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="320">
+                    <div class="p-4 service-card card h-100 border-0">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="service-icon" style="background: linear-gradient(180deg,#f97316,#fb923c);">
+                                <i class="fa-solid fa-water"></i>
+                            </div>
+                            <div>
+                                <h5>Pressure & Exterior</h5>
+                                <p class="muted small mb-0">Lavado a presión, limpieza de canaletas y fachadas
+                                    (evaluación requerida).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="380">
+                    <div class="p-4 service-card card h-100 border-0">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="service-icon" style="background: linear-gradient(180deg,#06b6d4,#0891b2);">
+                                <i class="fa-solid fa-shield-check"></i>
+                            </div>
+                            <div>
+                                <h5>Servicios de emergencia</h5>
+                                <p class="muted small mb-0">Atención por inundaciones, derrames o limpieza de emergencia
+                                    (evaluación in situ).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h3 class="text-center mb-4">Galería de trabajos</h3>
+            <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner rounded shadow">
+                    <div class="carousel-item active">
+                        <img src="./img/1.png" class="d-block w-100" alt="Limpieza profesional">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/2.png" class="d-block w-100" alt="Equipo de limpieza">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./img/3.png" class="d-block w-100" alt="Oficina limpia">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-5" style="background: linear-gradient(180deg,#f7fbff,#ffffff);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Lo que dicen nuestros clientes</h3>
+                    <p class="muted">Clientes satisfechos en NYC y Long Island.</p>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-3">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="testimonial">
+                        <p class="mb-2">"Espinales General hace un trabajo increíble cada vez. Mi casa queda impecable."
+                        </p>
+                        <h6 class="mb-0">— John Doe</h6>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+                    <div class="testimonial">
+                        <p class="mb-2">"Profesionales, puntuales y siempre detallistas. Recomendados."</p>
+                        <h6 class="mb-0">— Jane Smith</h6>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+                    <div class="testimonial">
+                        <p class="mb-2">"Atención excelente y resultados visibles. Contrato mensual y estamos muy
+                            contentos."</p>
+                        <h6 class="mb-0">— Mike Johnson</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h3>Contacto</h3>
+                    <p class="muted">Llámanos o envía un mensaje para solicitar presupuesto o agendar servicio.</p>
+
+                    <div class="mb-3">
+                        <strong>Teléfonos:</strong><br>
+                        <a href="tel:+15164300025">516-430-0025</a> • <a href="tel:+15169438489">516-943-8489</a>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Email:</strong><br>
+                        <a
+                            href="mailto:info@espinalesgeneralhousecleaning.com">info@espinalesgeneralhousecleaning.com</a>
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>Dirección:</strong><br>
+                        Freeport, NY 11520 — Servicio en NYC & Long Island
+                    </div>
+
+                    <div class="mt-4">
+                        <a class="btn btn-success me-2" href="mailto:info@espinalesgeneralhousecleaning.com"><i
+                                class="fa-solid fa-envelope"></i> Enviar email</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="map-responsive rounded">
+                        <!-- Map embebido -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31831.714406893847!2d-73.59843703853018!3d40.658858602219865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c27b8cd7d09e07%3A0x44ab046cac94d400!2sFreeport%2C%20Nueva%20York%2011520%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sec!4v1760967068275!5m2!1ses-419!2sec"
+                            aria-hidden="false" aria-label="mapa de ubicación"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 small">© <strong>Espinales General House Cleaning & Maintenance Corp</strong></p>
+                    <p class="small muted mb-0">Tel: 516-430-0025 • 516-943-8489 · Email:
+                        info@espinalesgeneralhousecleaning.com</p>
+                    Todos los derechos reservados · 2025
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+    </script>
+</body>
+
+</html>
